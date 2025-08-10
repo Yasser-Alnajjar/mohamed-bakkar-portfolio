@@ -9,8 +9,8 @@ export const Contact = () => {
     {
       icon: <Mail size={24} />,
       title: "Email",
-      value: "Mohamed.bakkar.gh@gmail.com",
-      link: "mailto:Mohamed.bakkar.gh@gmail.com",
+      value: "mohamed.bakkar.gh@gmail.com",
+      link: "mailto:mohamed.bakkar.gh@gmail.com",
     },
     {
       icon: <Phone size={24} />,
@@ -47,7 +47,7 @@ export const Contact = () => {
         </svg>
       ),
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/Mohamed-bakkar-66877a333",
+      url: "https://www.linkedin.com/in/mohamed-bakkar-66877a333",
     },
     {
       icon: (
@@ -74,7 +74,7 @@ export const Contact = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-12 gap-4 lg:gap-8">
         {/* Section Header */}
         <motion.div
@@ -84,12 +84,12 @@ export const Contact = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
             Get In Touch
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mt-4 sm:mt-6">
             I'm always open to discussing new opportunities, interesting
-            projects, or just having a chat about technology
+            projects, or just having a chat about design
           </p>
         </motion.div>
 
@@ -103,159 +103,168 @@ export const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="bg-card p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300 mb-4">
-              <h3 className="text-2xl lg:text-3xl font-semibold text-primary mb-6">
-                Send me a message
+            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mb-4 sm:mb-6">
+                Send Me a Message
               </h3>
 
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex flex-col gap-4">
-                    <Label htmlFor="name">Name</Label>
+              <form className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName" className="text-sm sm:text-base">
+                      First Name
+                    </Label>
                     <Input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className=" px-4 py-3 h-auto"
-                      placeholder="Your name"
-                      required
+                      id="firstName"
+                      placeholder="Your first name"
+                      className="text-sm sm:text-base"
                     />
                   </div>
-
-                  <div className="flex flex-col gap-4">
-                    <Label htmlFor="email">Email</Label>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName" className="text-sm sm:text-base">
+                      Last Name
+                    </Label>
                     <Input
-                      type="text"
-                      id="email"
-                      name="email"
-                      className=" px-4 py-3 h-auto"
-                      placeholder="your.email@example.com"
-                      required
+                      id="lastName"
+                      placeholder="Your last name"
+                      className="text-sm sm:text-base"
                     />
                   </div>
                 </div>
-                <div className="flex flex-col gap-4">
-                  <Label htmlFor="subject">Subject</Label>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-sm sm:text-base">
+                    Email
+                  </Label>
                   <Input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    className=" px-4 py-3 h-auto"
-                    placeholder="What's this about?"
-                    required
+                    id="email"
+                    type="email"
+                    placeholder="your.email@example.com"
+                    className="text-sm sm:text-base"
                   />
                 </div>
-                <div className="flex flex-col gap-4">
-                  <Label htmlFor="subject">Subject</Label>
+
+                <div className="space-y-2">
+                  <Label htmlFor="subject" className="text-sm sm:text-base">
+                    Subject
+                  </Label>
+                  <Input
+                    id="subject"
+                    placeholder="What's this about?"
+                    className="text-sm sm:text-base"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-sm sm:text-base">
+                    Message
+                  </Label>
                   <Textarea
                     id="message"
-                    name="message"
-                    rows={6}
-                    className=" px-4 py-3 h-auto"
-                    placeholder="Tell me about your project or opportunity..."
-                    required
+                    placeholder="Tell me about your project..."
+                    rows={5}
+                    className="text-sm sm:text-base resize-none"
                   />
                 </div>
 
-                <Button type="submit">
-                  <Send size={20} />
+                <Button className="w-full sm:w-auto">
+                  <Send size={18} className="sm:w-5 sm:h-5" />
                   Send Message
                 </Button>
               </form>
             </div>
-            <motion.div
-              className="col-span-12 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-card p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-green-500 font-medium">
-                    Available for new opportunities
-                  </span>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  I'm currently open to full-time positions, freelance projects,
-                  and interesting collaborations in graphic design. Let's
-                  discuss how we can work together!
-                </p>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Contact Information */}
           <motion.div
-            className="col-span-12 lg:col-span-5 space-y-6"
+            className="col-span-12 lg:col-span-5 space-y-4 sm:space-y-6"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
             {/* Contact Details */}
-            <div className="bg-card p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-2xl lg:text-3xl font-semibold text-primary mb-6">
+            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mb-4 sm:mb-6">
                 Contact Information
               </h3>
-              <div className="space-y-4">
-                {contactInfo.map((info) => (
-                  <a
+
+              <div className="space-y-4 sm:space-y-6">
+                {contactInfo.map((info, index) => (
+                  <motion.a
                     key={info.title}
                     href={info.link}
-                    className="flex items-center gap-4 p-4 rounded-lg hover:bg-primary/80 transition-colors duration-300 group"
+                    className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-all duration-300 group"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
                   >
-                    <div className="shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-foreground transition-colors duration-300">
+                    <div className="text-primary group-hover:scale-110 transition-transform duration-300">
                       {info.icon}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground">
+                      <h4 className="font-medium text-foreground text-sm sm:text-base">
                         {info.title}
                       </h4>
-                      <p className="text-muted-foreground group-hover:text-foreground">
+                      <p className="text-muted-foreground text-xs sm:text-sm">
                         {info.value}
                       </p>
                     </div>
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="bg-card p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-2xl lg:text-3xl font-semibold text-primary mb-6">
+            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mb-4 sm:mb-6">
                 Follow Me
               </h3>
-              <div className="flex gap-4">
-                {socialLinks.map((social) => (
-                  <Button asChild key={social.name}>
-                    <a
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group"
-                    >
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-2 p-3 sm:p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-all duration-300 group"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div className="text-primary group-hover:scale-110 transition-transform duration-300">
                       {social.icon}
+                    </div>
+                    <span className="font-medium text-foreground text-sm sm:text-base">
                       {social.name}
-                    </a>
-                  </Button>
+                    </span>
+                  </motion.a>
                 ))}
               </div>
             </div>
 
-            {/* Location Map Placeholder */}
-            <div className="bg-card p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-2xl lg:text-3xl font-semibold text-primary mb-6">
-                Location
+            {/* Availability Status */}
+            <div className="bg-card p-4 sm:p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mb-4 sm:mb-6">
+                Availability
               </h3>
-              <div className="aspect-video bg-gradient-to-br from-primary/10 to-yellow-200/10 rounded-lg border border-border flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🗺️</div>
-                  <p className="text-muted-foreground">Interactive Map</p>
-                  <p className="text-sm text-muted-foreground">
-                    Cairo - Maadi, Egypt
-                  </p>
+
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-foreground text-sm sm:text-base">
+                    Available for new projects
+                  </span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                  <span className="text-muted-foreground text-sm sm:text-base">
+                    Response time: Within 24 hours
+                  </span>
                 </div>
               </div>
             </div>

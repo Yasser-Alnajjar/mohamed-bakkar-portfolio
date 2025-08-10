@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "475px",
+        "3xl": "1600px",
+        "4xl": "1920px",
+      },
+      spacing: {
+        18: "4.5rem",
+        88: "22rem",
+        128: "32rem",
+      },
       colors: {
         "vanilla-latte": "#F5E6D3",
         "dark-bg": "#0A0A0A",
@@ -19,6 +29,21 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
+      fontSize: {
+        xs: ["0.75rem", { lineHeight: "1rem" }],
+        sm: ["0.875rem", { lineHeight: "1.25rem" }],
+        base: ["1rem", { lineHeight: "1.5rem" }],
+        lg: ["1.125rem", { lineHeight: "1.75rem" }],
+        xl: ["1.25rem", { lineHeight: "1.75rem" }],
+        "2xl": ["1.5rem", { lineHeight: "2rem" }],
+        "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
+        "4xl": ["2.25rem", { lineHeight: "2.5rem" }],
+        "5xl": ["3rem", { lineHeight: "1" }],
+        "6xl": ["3.75rem", { lineHeight: "1" }],
+        "7xl": ["4.5rem", { lineHeight: "1" }],
+        "8xl": ["6rem", { lineHeight: "1" }],
+        "9xl": ["8rem", { lineHeight: "1" }],
+      },
       gridTemplateColumns: {
         12: "repeat(12, minmax(0, 1fr))",
       },
@@ -26,6 +51,9 @@ module.exports = {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.5s ease-out",
         float: "float 3s ease-in-out infinite",
+        "slide-in-left": "slideInLeft 0.6s ease-out",
+        "slide-in-right": "slideInRight 0.6s ease-out",
+        "scale-in": "scaleIn 0.4s ease-out",
       },
       keyframes: {
         fadeIn: {
@@ -40,9 +68,31 @@ module.exports = {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        slideInLeft: {
+          "0%": { transform: "translateX(-50px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        slideInRight: {
+          "0%": { transform: "translateX(50px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        scaleIn: {
+          "0%": { transform: "scale(0.9)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
       },
       backdropBlur: {
         xs: "2px",
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+          "2xl": "6rem",
+        },
       },
     },
   },

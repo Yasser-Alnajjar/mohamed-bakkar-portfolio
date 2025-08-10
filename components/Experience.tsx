@@ -57,7 +57,7 @@ export const Experience = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-12 gap-4 lg:gap-8">
         {/* Section Header */}
         <motion.div
@@ -67,11 +67,11 @@ export const Experience = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
             Professional Experience
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-            My journey in Graphic Design, from intern to senior developer
+          <p className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mt-4 sm:mt-6">
+            My journey in Graphic Design, from freelancing to professional roles
           </p>
         </motion.div>
 
@@ -79,14 +79,14 @@ export const Experience = () => {
         <div className="col-span-12">
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform md:-translate-x-1/2"></div>
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform md:-translate-x-1/2" />
 
             {/* Experience Items */}
-            <div className="space-y-12">
+            <div className="space-y-10 sm:space-y-14">
               {experiences.map((experience, index) => (
                 <motion.div
                   key={index}
-                  className={`relative flex items-start ${
+                  className={`relative flex flex-col md:flex-row items-start md:items-center ${
                     index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                   initial={{ opacity: 0, y: 50 }}
@@ -95,63 +95,76 @@ export const Experience = () => {
                   viewport={{ once: true }}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background transform md:-translate-x-1/2 mt-6"></div>
+                  <div className="absolute left-[14px] sm:left-[15px] md:left-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-primary rounded-full border-4 border-background transform md:-translate-x-1/2 mt-6" />
 
                   {/* Content */}
                   <div
                     className={`ml-12 md:ml-0 md:w-5/12 ${
-                      index % 2 === 0 ? "md:pr-8" : "md:pl-8"
+                      index % 2 === 0 ? "md:pr-10" : "md:pl-10 md:order-first"
                     }`}
                   >
-                    <div className="bg-card p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300">
+                    <motion.div
+                      className="bg-card p-5 sm:p-6 lg:p-8 rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-300"
+                      whileHover={{ y: -5 }}
+                    >
                       {/* Header */}
-                      <div className="mb-4">
-                        <h3 className="text-2xl lg:text-3xl font-semibold text-primary">
+                      <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                           {experience.title}
                         </h3>
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                          <div className="flex items-center gap-1">
-                            <Building size={16} />
-                            <span>{experience.company}</span>
+
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm sm:text-base flex-wrap">
+                          <div className="flex items-center space-x-2 text-primary">
+                            <Building size={16} className="sm:w-5 sm:h-5" />
+                            <span className="font-medium">
+                              {experience.company}
+                            </span>
                           </div>
-                          <div className="flex items-center gap-1">
-                            <MapPin size={16} />
+
+                          <div className="flex items-center space-x-2 text-muted-foreground">
+                            <MapPin size={16} className="sm:w-5 sm:h-5" />
                             <span>{experience.location}</span>
                           </div>
-                        </div>
-                        <div className="flex items-center gap-1 text-sm text-primary">
-                          <Calendar size={16} />
-                          <span>{experience.period}</span>
+
+                          <div className="flex items-center space-x-2 text-muted-foreground">
+                            <Calendar size={16} className="sm:w-5 sm:h-5" />
+                            <span>{experience.period}</span>
+                          </div>
                         </div>
                       </div>
 
                       {/* Description */}
-                      <div className="mb-4">
-                        <ul className="space-y-2">
-                          {experience.description.map((item, itemIndex) => (
+                      <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                        <h4 className="font-semibold text-foreground text-sm sm:text-base">
+                          Key Responsibilities:
+                        </h4>
+                        <ul className="space-y-2 sm:space-y-3">
+                          {experience.description.map((item, i) => (
                             <li
-                              key={itemIndex}
-                              className="flex items-start gap-2 text-muted-foreground leading-relaxed"
+                              key={i}
+                              className="flex items-start space-x-2 text-muted-foreground text-xs sm:text-sm leading-relaxed"
                             >
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
-                      {/* Tech Stack */}
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-2">
-                          Technologies Used
+                      {/* Technologies */}
+                      <div className="space-y-2 sm:space-y-3">
+                        <h4 className="font-semibold text-foreground text-sm sm:text-base">
+                          Technologies & Skills:
                         </h4>
                         <div className="flex flex-wrap gap-2">
-                          {experience.tech.map((tech) => (
-                            <Badge key={tech}>{tech}</Badge>
+                          {experience.tech.map((tech, i) => (
+                            <Badge key={i} className="text-xs sm:text-sm">
+                              {tech}
+                            </Badge>
                           ))}
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </motion.div>
               ))}

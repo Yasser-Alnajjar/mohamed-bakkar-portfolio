@@ -7,18 +7,18 @@ import { Button } from "@components";
 
 export const Hero = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-12 gap-4 lg:gap-8 items-center min-h-[80vh]">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-12 gap-4 lg:gap-8 items-center min-h-[80vh] lg:min-h-[90vh]">
         {/* Left Column - Text Content */}
         <motion.div
-          className="col-span-12 lg:col-span-7 space-y-8"
+          className="col-span-12 lg:col-span-7 space-y-6 sm:space-y-8"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <motion.p
-              className="text-primary font-medium text-lg"
+              className="text-primary font-medium text-base sm:text-lg lg:text-xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -27,7 +27,7 @@ export const Hero = () => {
             </motion.p>
 
             <motion.h1
-              className="text-4xl lg:text-6xl font-bold text-foreground leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -36,7 +36,7 @@ export const Hero = () => {
             </motion.h1>
 
             <motion.h2
-              className="text-2xl lg:text-3xl font-semibold text-primary"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-primary"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
@@ -46,7 +46,7 @@ export const Hero = () => {
           </div>
 
           <motion.p
-            className="text-muted-foreground text-lg max-w-2xl leading-relaxed"
+            className="text-muted-foreground text-base sm:text-lg lg:text-xl max-w-2xl leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
@@ -58,34 +58,36 @@ export const Hero = () => {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
           >
-            <Button>
-              <Download size={20} />
-              Download CV
+            <Button className="w-full sm:w-auto justify-center">
+              <Download size={18} className="sm:w-5 sm:h-5" />
+              <span className="hidden xs:inline">Download CV</span>
+              <span className="xs:hidden">CV</span>
             </Button>
 
-            <Button>
-              <Mail size={20} />
-              Get In Touch
-              <ArrowRight size={20} />
+            <Button className="w-full sm:w-auto justify-center">
+              <Mail size={18} className="sm:w-5 sm:h-5" />
+              <span className="hidden xs:inline">Get In Touch</span>
+              <span className="xs:hidden">Contact</span>
+              <ArrowRight size={18} className="sm:w-5 sm:h-5" />
             </Button>
           </motion.div>
         </motion.div>
 
         {/* Right Column - Profile Picture */}
         <motion.div
-          className="col-span-12 lg:col-span-5 flex justify-center lg:justify-end"
+          className="col-span-12 lg:col-span-5 flex justify-center lg:justify-end mt-8 lg:mt-0"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="relative">
             {/* Profile Picture */}
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem]">
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-yellow-200 rounded-full animate-float"></div>
               <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
                 <Image
@@ -98,9 +100,9 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Floating Elements */}
+            {/* Floating Elements - Hidden on very small screens */}
             <motion.div
-              className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full"
+              className="absolute -top-4 -right-4 w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-full hidden sm:block"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.7, 1, 0.7],
@@ -112,7 +114,7 @@ export const Hero = () => {
               }}
             ></motion.div>
             <motion.div
-              className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary rounded-full"
+              className="absolute -bottom-4 -left-4 w-4 h-4 sm:w-6 sm:h-6 bg-primary rounded-full hidden sm:block"
               animate={{
                 scale: [1, 1.3, 1],
                 opacity: [0.5, 1, 0.5],
