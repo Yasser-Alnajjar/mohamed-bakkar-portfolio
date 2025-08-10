@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@components";
 
 export const metadata: Metadata = {
-  title: "Mahmod Bakkar Abdel WahaA - Mid-Level Graphic Designer",
+  title: "Mohamed Bakkar Abdel WahaA - Mid-Level Graphic Designer",
   description:
     "Creative and detail-oriented Mid-Level Graphic Designer with 3 years of experience, specializing in brand identity, social media design, motion graphics, and print materials.",
 };

@@ -1,6 +1,6 @@
-# Frontend Developer Portfolio
+# Graphic Designer Portfolio
 
-A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Designed specifically for frontend developers to showcase their skills, projects, and experience.
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Designed specifically for Graphic Designer Mohamed Bakkar Abdel WahaA to showcase his creative skills, projects, and professional experience.
 
 ## 🎨 Design Features
 
@@ -9,21 +9,22 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - **12-Column Grid Layout** for easy development and maintenance
 - **Smooth Animations** powered by Framer Motion
 - **Fully Responsive** design for all devices
-- **Professional Layout** optimized for job applications
+- **Professional Layout** optimized for job applications and client presentations
 
 ## 🚀 Tech Stack
 
-- **Framework**: Next.js 14 with App Router
+- **Framework**: Next.js 15 with App Router
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS 4
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Font**: Poppins (Google Fonts)
+- **UI Components**: Radix UI primitives
 
 ## 📁 Project Structure
 
 ```
-next-portfolio/
+Mohamed-protfolio/
 ├── app/
 │   ├── globals.css          # Global styles and Tailwind imports
 │   ├── layout.tsx           # Root layout component
@@ -33,12 +34,16 @@ next-portfolio/
 │   ├── Hero.tsx            # Home section with introduction
 │   ├── About.tsx           # About section with bio and strengths
 │   ├── Skills.tsx          # Technical skills showcase
-│   ├── Projects.tsx        # Projects portfolio
 │   ├── Experience.tsx      # Professional experience timeline
-│   └── Contact.tsx         # Contact form and information
-├── tailwind.config.js      # Tailwind configuration
-├── package.json            # Dependencies and scripts
-└── README.md              # This file
+│   ├── Contact.tsx         # Contact form and information
+│   └── atoms/              # Reusable UI components
+├── hooks/                   # Custom React hooks
+├── lib/                     # Utility functions
+├── public/                  # Static assets (logo.jpg, yasser.jpg)
+├── styles/                  # Additional CSS files
+├── tailwind.config.js       # Tailwind configuration
+├── package.json             # Dependencies and scripts
+└── README.md               # This file
 ```
 
 ## 🛠️ Getting Started
@@ -46,7 +51,7 @@ next-portfolio/
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
+- npm, yarn, or bun
 
 ### Installation
 
@@ -54,7 +59,7 @@ next-portfolio/
 
    ```bash
    git clone <your-repo-url>
-   cd next-portfolio
+   cd Mohamed-protfolio
    ```
 
 2. **Install dependencies**
@@ -63,6 +68,8 @@ next-portfolio/
    npm install
    # or
    yarn install
+   # or
+   bun install
    ```
 
 3. **Run the development server**
@@ -71,6 +78,8 @@ next-portfolio/
    npm run dev
    # or
    yarn dev
+   # or
+   bun dev
    ```
 
 4. **Open your browser**
@@ -82,27 +91,24 @@ next-portfolio/
 
 Update the following files with your information:
 
-- **Hero Section** (`components/Hero.tsx`): Replace `[Your Name]` with your actual name
-- **About Section** (`components/About.tsx`): Update bio, strengths, and education
+- **Hero Section** (`components/Hero.tsx`): Replace "Mohamed Bakkar Abdel WahaA" with your actual name
+- **About Section** (`components/About.tsx`): Update bio, strengths, and background
 - **Experience Section** (`components/Experience.tsx`): Replace with your work history
 - **Contact Section** (`components/Contact.tsx`): Update contact details and social links
 
-### 2. Projects
+### 2. Profile Picture
 
-Edit the `projects` array in `components/Projects.tsx`:
+Replace the placeholder in `components/Hero.tsx` with your actual profile picture:
 
 ```typescript
-const projects = [
-  {
-    title: "Your Project Name",
-    description: "Project description...",
-    image: "/path/to/image.jpg",
-    tech: ["React", "Next.js", "Tailwind CSS"],
-    liveUrl: "https://your-project.com",
-    githubUrl: "https://github.com/yourname/project",
-    featured: true, // Set to true for featured projects
-  },
-];
+// Replace the logo.jpg with your profile picture
+<Image
+  src="/your-profile-picture.jpg"
+  alt="Your Name"
+  fill
+  className="object-cover"
+  priority
+/>
 ```
 
 ### 3. Skills
@@ -112,16 +118,52 @@ Update the `skillCategories` array in `components/Skills.tsx`:
 ```typescript
 const skillCategories = [
   {
-    category: "Frontend",
+    category: "Design Tools",
     skills: [
-      { name: "React.js", icon: "⚛️", level: 90 },
+      { name: "Adobe Photoshop", icon: "🎨", level: 95 },
       // Add your skills here
     ],
   },
 ];
 ```
 
-### 4. Colors and Styling
+### 4. Experience
+
+Edit the `experiences` array in `components/Experience.tsx`:
+
+```typescript
+const experiences = [
+  {
+    title: "Your Job Title",
+    company: "Company Name",
+    location: "City, Country",
+    period: "Start Date - End Date",
+    description: [
+      "Your job description...",
+      // Add more descriptions
+    ],
+    tech: ["Skill 1", "Skill 2", "Skill 3"],
+  },
+];
+```
+
+### 5. Contact Information
+
+Update the contact details in `components/Contact.tsx`:
+
+```typescript
+const contactInfo = [
+  {
+    icon: <Mail size={24} />,
+    title: "Email",
+    value: "your.email@example.com",
+    link: "mailto:your.email@example.com",
+  },
+  // Add more contact methods
+];
+```
+
+### 6. Colors and Styling
 
 Modify the color palette in `tailwind.config.js`:
 
@@ -131,21 +173,6 @@ colors: {
   'dark-bg': '#0A0A0A',       // Background color
   // ... other colors
 }
-```
-
-### 5. Profile Picture
-
-Replace the placeholder in `components/Hero.tsx` with your actual profile picture:
-
-```typescript
-// Replace the placeholder div with an actual image
-<Image
-  src="/your-profile-picture.jpg"
-  alt="Your Name"
-  width={400}
-  height={400}
-  className="rounded-full"
-/>
 ```
 
 ## 📱 Responsive Design
@@ -211,4 +238,4 @@ If you have any questions or need help customizing the portfolio, please open an
 
 ---
 
-**Happy coding! 🎉**
+**Happy designing! 🎨✨**

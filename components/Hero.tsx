@@ -32,7 +32,7 @@ export const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              Mahmod Bakkar Abdel WahaA
+              Mohamed Bakkar Abdel WahaA
             </motion.h1>
 
             <motion.h2
@@ -90,7 +90,7 @@ export const Hero = () => {
               <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-primary shadow-2xl">
                 <Image
                   src="/logo.jpg"
-                  alt="Mahmod Bakkar Abdel WahaA"
+                  alt="Mohamed Bakkar Abdel WahaA"
                   fill
                   className="object-cover"
                   priority

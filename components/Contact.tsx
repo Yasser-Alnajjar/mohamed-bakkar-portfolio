@@ -9,8 +9,8 @@ export const Contact = () => {
     {
       icon: <Mail size={24} />,
       title: "Email",
-      value: "mohamed.bakkar.gh@gmail.com",
-      link: "mailto:mohamed.bakkar.gh@gmail.com",
+      value: "Mohamed.bakkar.gh@gmail.com",
+      link: "mailto:Mohamed.bakkar.gh@gmail.com",
     },
     {
       icon: <Phone size={24} />,
@@ -47,7 +47,7 @@ export const Contact = () => {
         </svg>
       ),
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/mohamed-bakkar-66877a333",
+      url: "https://www.linkedin.com/in/Mohamed-bakkar-66877a333",
     },
     {
       icon: (
