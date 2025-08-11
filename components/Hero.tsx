@@ -32,7 +32,7 @@ export const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              Mohamed Bakkar Abdel WahaA
+              Mohamed Bakkar Abdelwahab
             </motion.h1>
 
             <motion.h2
